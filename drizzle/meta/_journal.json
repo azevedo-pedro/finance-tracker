@@ -8,6 +8,13 @@
       "when": 1722401598570,
       "tag": "0000_large_silver_centurion",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1722453735361,
+      "tag": "0001_striped_hobgoblin",
+      "breakpoints": true
     }
   ]
 }
