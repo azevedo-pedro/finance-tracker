@@ -1,49 +1,20 @@
-import { z } from "zod";
-import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
 import { handle } from "hono/vercel";
-import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
+import accounts from "./accounts";
+import { HTTPException } from "hono/http-exception";
+
+export const runtime = "edge";
 
 const app = new Hono().basePath("/api");
 
-app.use("*", clerkMiddleware());
-app
-  .get("/hello", (c) => {
-    const auth = getAuth(c);
+app.onError((err, c) => {
+  if (err instanceof HTTPException) return err.getResponse();
+  return c.json({ error: "Internal Error" }, 500);
+});
 
-    if (!auth?.userId) {
-      return c.json({
-        error: "Unauthorized",
-      });
-    }
-    return c.json({
-      message: "Hello Next.js!",
-      userId: auth.userId,
-    });
-  })
-  .get(
-    "/hello/:test",
-    zValidator(
-      "param",
-      z.object({
-        test: z.string(),
-      }),
-    ),
-    (c) => {
-      const auth = getAuth(c);
-      const { test } = c.req.valid("param");
-
-      if (!auth?.userId) {
-        return c.json({
-          error: "Unauthorized",
-        });
-      }
-      return c.json({
-        message: "Hello Next.js!",
-        test: test,
-      });
-    },
-  );
+const routes = app.route("/accounts", accounts);
 
 export const GET = handle(app);
 export const POST = handle(app);
+
+export type AppType = typeof routes;
