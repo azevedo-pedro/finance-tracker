@@ -1,4 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Finance Tracker
+
+Finance Tracker
+
+Take control of your financial journey with Finance Tracker, your ultimate tool for managing, monitoring, and maximizing your money. Designed with simplicity and functionality in mind, Finance Tracker empowers you to stay on top of your finances effortlessly.
+
+Key Features:
+
+Comprehensive Dashboard: Access a unified view of your bank accounts, credit cards, and investments. The user-friendly dashboard provides a snapshot of your financial health, so you can quickly assess your status and make informed decisions.
+
+Expense Tracking: Log and categorize your expenses with ease. Finance Tracker automatically sorts your transactions and generates detailed summaries to help you understand where your money is going.
+
+Budget Management: Set up customized budgets and track your spending against them. The app alerts you when you’re nearing or exceeding your budget limits, helping you stay on track and avoid overspending.
+
+Financial Reports: Dive deep into your financial data with visual reports and charts. Analyze your spending patterns, income sources, and savings goals to identify trends and areas for improvement.
+
+Goal Setting: Define and monitor your financial goals, whether it’s saving for a vacation, paying off debt, or building an emergency fund. Finance Tracker tracks your progress and keeps you motivated.
+
+Automatic Syncing: Keep your finances up-to-date with automatic syncing across all your devices. Whether you’re on your phone, tablet, or computer, Finance Tracker ensures you always have the latest information at your fingertips.
+
+Secure Data Protection: Your financial data is safeguarded with robust encryption and security measures. Access your information with confidence, knowing that your privacy is protected.
+
+Financial Insights: Receive actionable insights and personalized tips based on your spending habits and financial goals. Finance Tracker helps you make smarter financial decisions and improve your overall money management.
+
+Whether you’re looking to streamline your budget, track your expenses, or set and achieve financial goals, Finance Tracker is here to support you every step of the way. Take charge of your financial future and start your journey to better money management today with Finance Tracker.
 
 ## Getting Started
 
