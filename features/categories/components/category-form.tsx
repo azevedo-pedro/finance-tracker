@@ -12,7 +12,6 @@ import {
   FormLabel,
   FormField,
   FormItem,
-  FormMessage,
 } from "@/components/ui/form";
 
 const formSchema = insertCategorySchema.pick({ name: true });
@@ -59,7 +58,7 @@ export function CategoryForm({
               <FormControl>
                 <Input
                   disabled={disabled}
-                  placeholder="e.g. Cash, Bank, Credit Card"
+                  placeholder="e.g. Food, Travel, etc."
                   {...field}
                 />
               </FormControl>

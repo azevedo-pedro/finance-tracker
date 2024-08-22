@@ -32,7 +32,7 @@ export function NewCategorySheet() {
         <SheetHeader>
           <SheetTitle>New Category</SheetTitle>
           <SheetDescription>
-            Create a new category to track your transactions.
+            Create a new category to organize your transactions.
           </SheetDescription>
         </SheetHeader>
         <CategoryForm
