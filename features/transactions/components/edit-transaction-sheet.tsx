@@ -34,7 +34,7 @@ export function EditTransactionSheet() {
 
   const defaultValues = accountQuery.data
     ? {
-        name: accountQuery.data.name,
+        name: accountQuery.data,
       }
     : { name: "" };
 
@@ -74,8 +74,16 @@ export function EditTransactionSheet() {
               id={id}
               onSubmit={onSubmit}
               disabled={isPending}
-              defaultValues={defaultValues}
+              // defaultValues={defaultValues}
               onDelete={onDelete}
+              accountOptions={[]}
+              categoryOptions={[]}
+              onCreateCategory={function (name: string): void {
+                throw new Error("Function not implemented.");
+              }}
+              onCreateAccount={function (name: string): void {
+                throw new Error("Function not implemented.");
+              }}
             />
           )}
         </SheetContent>
