@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/form";
 import { Select } from "@/components/select";
 import { DatePicker } from "@/components/date-picker";
+import { AmountInput } from "@/components/amount-input";
+import { convertAmountToMiliunits } from "@/lib/utils";
 
 const formSchema = z.object({
   date: z.coerce.date(),
@@ -59,7 +61,9 @@ export function TransactionForm({
     defaultValues: defaultValues,
   });
   const handleSubmit = (values: FormValues) => {
-    console.log({ values });
+    const amount = parseFloat(values.amount);
+    const amountInMiliunits = convertAmountToMiliunits(amount);
+    onSubmit({ ...values, amount: amountInMiliunits });
   };
   const handleDelete = () => {
     onDelete?.();
@@ -134,6 +138,23 @@ export function TransactionForm({
                   disabled={disabled}
                   placeholder="Add a payee"
                   {...field}
+                />
+              </FormControl>
+            </FormItem>
+          )}
+        />
+        <FormField
+          name="amount"
+          control={form.control}
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Amount</FormLabel>
+              <FormControl>
+                <AmountInput
+                  {...field}
+                  disabled={disabled}
+                  onChange={field.onChange}
+                  placeholder="0.00"
                 />
               </FormControl>
             </FormItem>

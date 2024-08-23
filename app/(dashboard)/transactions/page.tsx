@@ -8,10 +8,11 @@ import { useGetTransaction } from "@/features/transactions/api/use-get-transacti
 import { useNewTransaction } from "@/features/transactions/hooks/use-new-transaction";
 import { Loader2, Plus } from "lucide-react";
 import { columns } from "./columns";
+import { useGetTransactions } from "@/features/transactions/api/use-get-transactions";
 
-export default function AccountsPage() {
+export default function TransactionPage() {
   const newTransaction = useNewTransaction();
-  const transactionsQuery = useGetTransaction();
+  const transactionsQuery = useGetTransactions();
   const transactions = transactionsQuery.data || [];
   const deleteTransactions = useBulkDeleteTransactions();
   const isDisabled =
